@@ -6,7 +6,9 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<main className="flex h-full w-full flex-col items-center">
 			<Header />
-			<div className="container mt-6">{children}</div>
+			<div className="">
+				<div className="container mt-3">{children}</div>
+			</div>
 		</main>
 	)
 }

@@ -55,3 +55,8 @@ export const rewardsData: Rewards = {
 		medal: '/medal/first.png'
 	}
 }
+
+export const TOTAL_REWARD = Object.values(rewardsData).reduce(
+	(sumReward, currReward) => sumReward + currReward.ammount,
+	0
+)

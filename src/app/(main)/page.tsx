@@ -12,7 +12,7 @@ const HomePage = async () => {
 	})
 
 	return (
-		<div className="h-[670px] w-full overflow-hidden rounded-2xl border border-foreground/20 bg-background shadow-md">
+		<div className="h-[670px] w-[1124px] overflow-hidden rounded-2xl border border-foreground/20 bg-background shadow-md">
 			<MainScreen />
 		</div>
 	)

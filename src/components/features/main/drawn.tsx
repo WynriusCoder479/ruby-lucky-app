@@ -2,19 +2,11 @@
 
 import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { LuLoader, LuLoader2 } from 'react-icons/lu'
 import { PiHandWithdraw } from 'react-icons/pi'
 import { useTimeout } from 'usehooks-ts'
 
-import { Button } from '@/components/ui/button'
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem
-} from '@/components/ui/carousel'
-import { cn } from '@/lib/utils'
-import { LuLoader, LuLoader2 } from 'react-icons/lu'
-import { rewardsData } from '@/constants/rewards.constants'
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -23,6 +15,14 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle
 } from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem
+} from '@/components/ui/carousel'
+import { rewardsData } from '@/constants/rewards.constants'
+import { cn } from '@/lib/utils'
 import { useUserAndReward } from '@/stores/result.store'
 
 interface DrawnProps {
@@ -70,7 +70,7 @@ const Drawn: FC<DrawnProps> = ({ users }) => {
 
 	return (
 		<>
-			<div className="grid h-full grid-rows-12 divide-y divide-foreground/20">
+			<div className="grid h-fit grid-rows-12 divide-y divide-foreground/20">
 				<div className="row-span-6 grid grid-cols-[1fr_auto] divide-x divide-foreground/20">
 					<div className="p-1.5">
 						<div className="flex h-full w-full items-center justify-center gap-4 rounded-lg border border-foreground/20 p-2 shadow-md">
@@ -296,7 +296,7 @@ const RenderResult: FC<{
 				...reward
 			})
 		},
-		20 + (result.length + 1) * 200
+		2000 + (result.length + 1) * 200
 	)
 
 	const userIndex = users.findIndex(user => user.leadId === result)
@@ -320,7 +320,7 @@ const RenderResult: FC<{
 			{result.split('').map((item, i) => (
 				<Letter
 					key={i}
-					delay={20 + i * 200}
+					delay={2000 + i * 200}
 					letter={item}
 				/>
 			))}
